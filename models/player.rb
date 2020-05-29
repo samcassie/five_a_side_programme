@@ -30,7 +30,26 @@ class Player
         values = [@first_name, @second_name, @age, @position]
         results = SqlRunner.run(sql, values)
         @id = results.first()['id'].to_i
-        @team_id = results.first()['team_id'].to_i()
+        @team_id = nil
+    end
+
+    def join_team(team_id)
+        @team_id = team_id
+        sql = "UPDATE players
+        SET (
+        first_name,
+        second_name,
+        age,
+        position,
+        team_id
+       )
+       =
+       (
+         $1, $2, $3, $4, $5
+       )
+       WHERE id = $6"
+       values = [@first_name, @second_name, @age, @position, @team_id, @id]
+       SqlRunner.run(sql, values)
     end
 
     def team()
