@@ -32,6 +32,12 @@ class Team
         SqlRunner.run( sql, values )
     end
 
+    def players()
+        sql = "SELECT * FROM players WHERE team_id = $1"
+        values = [@id]
+        result = SqlRunner.run(sql, values).first()
+    end
+
     def self.delete_all()
         sql = "DELETE FROM teams"
         SqlRunner.run( sql )
