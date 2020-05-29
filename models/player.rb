@@ -40,7 +40,6 @@ class Player
         SqlRunner.run( sql, values )
     end
 
-
     def join_team(team_id)
         @team_id = team_id
         sql = "UPDATE players

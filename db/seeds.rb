@@ -15,6 +15,14 @@ player1 = Player.new({
 
 player1.save()
 
+player2 = Player.new({
+    'first_name' => 'Pete',
+    'second_name' => 'Smith',
+    'age' => 20,
+    'position' => 'CF'
+})
+
+player2.save()
 
 
 team1 = Team.new({
@@ -22,6 +30,12 @@ team1 = Team.new({
 })
 
 team1.save()
+
+team2 = Team.new({
+    'name' => 'Giffnock FC'
+})
+
+team2.save()
 
 binding.pry
 nil
