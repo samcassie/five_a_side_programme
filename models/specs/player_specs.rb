@@ -27,9 +27,20 @@ class TestPlayer < MiniTest::Test
 
     end
 
-    def test_player1_first_name
+    def test_player_first_name
         assert_equal('Sam', @player1.first_name)
     end
 
+    def test_player_second_name
+        assert_equal('Smith', @player2.second_name)
+    end
+
+    def test_player_age
+        assert_equal(20, @player2.age)
+    end
+
+    def test_player_position
+        assert_equal('CM', @player1.position)
+    end
 
 end
