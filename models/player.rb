@@ -33,6 +33,14 @@ class Player
         @team_id = nil
     end
 
+    def delete()
+        sql = "DELETE FROM players
+        WHERE id = $1"
+        values = [@id]
+        SqlRunner.run( sql, values )
+    end
+
+
     def join_team(team_id)
         @team_id = team_id
         sql = "UPDATE players
