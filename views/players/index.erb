@@ -1,17 +1,17 @@
-<h3 id="players-title">Players registered:</h3>
-
-<% for player in @players %>
-    <div>
-    <h3>Name: <%=player.first_name%> <%=player.second_name%></h3>
-    <h3>Age: <%=player.age%></h3>
-    <h3>Position: <%=player.position%></h3>
-    <h3>Team:
-        <% if player.team == nil %>
+<div id="players-title">
+    Players registered:
+    <hr>
+    <% for player in @players %>
+        <h3>Name: <%=player.first_name%> <%=player.second_name%></h3>
+        <h3>Age: <%=player.age%></h3>
+        <h3>Position: <%=player.position%></h3>
+        <h3>Team:
+            <% if player.team == nil %>
             None
-        <% else %>
-            <%= @player.team %>
-        <% end %>
-    </h3>
-    </div>
-    <br>
-<%end%>
+            <% else %>
+                <%= @player.team %>
+            <% end %>
+        </h3>
+        <hr>
+        <%end%>
+</div>
