@@ -1,0 +1,11 @@
+<h3 id="teams-title">Teams registered:</h3>
+
+<% for team in @teams %>
+    <div>
+    <h3>Team Name: <%=team.name%></h3>
+    <h3>Players: <% for player in team.players%>
+    player</h3>
+    <% end %>
+    </div>
+    <br>
+<% end %>

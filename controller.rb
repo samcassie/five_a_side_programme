@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative('controllers/players_controller')
-require_relative('controllers/teams_controller')
+require_relative('controllers/players_controller.rb')
+require_relative('controllers/teams_controller.rb')
 
 get '/' do
     @players = Player.all()
