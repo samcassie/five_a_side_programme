@@ -5,6 +5,6 @@ require_relative('controllers/teams_controller')
 
 get '/' do
     @players = Player.all()
-    @teams = Teams.all()
+    @teams = Team.all()
     erb( :index )
 end

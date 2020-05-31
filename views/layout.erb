@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="/styles.css"> -->
-    <title>Five-A-Side</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Find-A-Side</title>
 </head>
 <body>
+    <div id="nav">
+        <a href="" class="button">Home</a>
+        <a href="" class="button">Teams</a>
+        <a href="" class="button">Players</a>
+    </div>
 
-    <%= yield %>
+    <div id="background-img"></div>
+    <div id="banner-text">
+        <h1 id="main-header">find-a-side</h1>
+        <%= yield %>
+        <br>
+        <a href="" class="button">Get Started</a>
+    </div>
 </body>
 </html>

@@ -24,7 +24,6 @@ player2 = Player.new({
 
 player2.save()
 
-
 team1 = Team.new({
     'name' => 'Eastside FC'
 })
