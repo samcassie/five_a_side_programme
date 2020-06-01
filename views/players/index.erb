@@ -1,10 +1,8 @@
 <div id="players-title">
     <div id="players-new">Players registered:
-
         <form action="/players/new" method="get">
             <input type="submit" value="add player">
         </form>
-
     </div>
     <hr>
 
@@ -19,6 +17,14 @@
                 <%= @player.team %>
             <% end %>
         </h3>
+        <div id="buttons">
+            <form action="/players/<%=player.id%>/delete" method="get" class="space">
+                <input type="button" value="remove" id="sign-up-player">
+            </form>
+            <form action="/players/edit" method="get" class="space">
+                <input type="button" value="edit" id="sign-up-player">
+            </form>
+        </div>
         <hr>
         <%end%>
 </div>

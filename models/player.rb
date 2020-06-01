@@ -65,6 +65,14 @@ class Player
         result = SqlRunner.run(sql, values).first()
     end
 
+    def self.find( id )
+      sql = "SELECT * FROM players WHERE id = $1"
+      values = [id]
+      player = SqlRunner.run( sql, values )
+      result = Player.new( player.first )
+      return result
+    end
+
     def self.delete_all()
         sql = "DELETE FROM players"
         SqlRunner.run( sql )

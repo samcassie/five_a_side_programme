@@ -18,3 +18,8 @@ post '/players' do
     @player.save()
     erb(:"players/created")
 end
+
+get '/players/:id/delete' do
+    @player = Player.find(id)
+    erb(:"delete")
+end
