@@ -10,7 +10,7 @@ player1 = Player.new({
     'first_name' => 'Sam',
     'second_name' => 'Cassie',
     'age' => 23,
-    'position' => 'Midfield'
+    'position' => 'Midfielder'
 })
 
 player1.save()
@@ -46,7 +46,7 @@ player5 = Player.new({
     'first_name' => 'Thomas',
     'second_name' => 'Smith',
     'age' => 31,
-    'position' => 'Defence'
+    'position' => 'Defender'
 })
 
 player5.save()
@@ -55,7 +55,7 @@ player6 = Player.new({
     'first_name' => 'Josh',
     'second_name' => 'McArthur',
     'age' => 27,
-    'position' => 'Midfield'
+    'position' => 'Midfielder'
 })
 
 player6.save()

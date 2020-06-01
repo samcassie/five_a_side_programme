@@ -1,6 +1,13 @@
 <div id="players-title">
-    Players registered:
+    <div id="players-new">Players registered:
+
+        <form action="/players/new" method="get">
+            <input type="submit" value="add player">
+        </form>
+
+    </div>
     <hr>
+
     <% for player in @players %>
         <h3>Name: <%=player.first_name%> <%=player.second_name%></h3>
         <h3>Age: <%=player.age%></h3>

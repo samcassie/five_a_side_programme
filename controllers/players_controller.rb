@@ -8,3 +8,13 @@ get '/players' do
     @players = Player.all()
     erb(:"players/index")
 end
+
+get '/players/new' do
+    erb(:"players/new")
+end
+
+post '/players' do
+    @player = Player.new(params)
+    @player.save()
+    erb(:"players/created")
+end
