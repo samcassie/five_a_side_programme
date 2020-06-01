@@ -44,6 +44,14 @@ class Team
         SqlRunner.run( sql )
     end
 
+    def self.find( id )
+      sql = "SELECT * FROM teams WHERE id = $1"
+      values = [id]
+      team = SqlRunner.run( sql, values )
+      result = Team.new( team.first )
+      return result
+    end
+
     def self.all()
       sql = "SELECT * FROM teams"
       results = SqlRunner.run( sql )

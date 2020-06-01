@@ -53,7 +53,7 @@ class Player
             $1, $2, $3, $4
         )
         WHERE (id, team_id) = ($5, $6)"
-        values = [@first_name, @second_name, @age, @position, @id, @team_id]
+        values = [@first_name, @second_name, @age, @position, @id, nil]
         SqlRunner.run(sql, values)
     end
 

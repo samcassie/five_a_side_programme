@@ -178,3 +178,42 @@ body, html{
 .space {
     margin-right: 15px;
 }
+
+/* TEAMS PAGES STYLING */
+
+#teams-title {
+    position: absolute;
+    font-size: 15px;
+    background-color: rgba(255,255,255,0.8);
+    top: 10vh;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 5;
+    min-height: 70px;
+    width: 90vw;
+    margin: 5vw;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    padding: 10px 25px 10px 25px;
+    line-height: 40px;
+    border: solid #42587d 5px;
+    height: auto;
+    font-weight: bold;
+}
+
+#teams-title h3 {
+    padding: 5px 5px 5px 0px;
+    font-size: 17px;
+    line-height: 10px;
+}
+
+
+#teams-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sign-up-team {
+    margin-right: 2px;
+}

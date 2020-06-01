@@ -36,9 +36,9 @@ end
 post '/players/:id/edit-confirmed' do
     @player = Player.new(params)
     @player.update()
+    @player.save()
     erb(:"players/edit_confirmed")
 end
-
 
 post '/players' do
     @player = Player.new(params)

@@ -9,3 +9,16 @@ get '/teams' do
     @players = Player.all()
     erb(:"teams/index")
 end
+
+get '/teams/new' do
+    erb(:"teams/new")
+end
+
+post '/teams' do
+    @team = Team.new(params)
+    @team.save()
+    erb(:"teams/created")
+end
+
+get '/teams/:id/delete' do
+    @team = 
