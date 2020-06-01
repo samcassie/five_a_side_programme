@@ -1,0 +1,11 @@
+<div id="players-title">
+Are you sure you wish you to delete <%= @player.first_name %> <%= @player.second_name %>?
+<div id="buttons">
+    <form action="/players/<%=@player.id%>/confirm-delete" method="get" class="space">
+        <input type="submit" value="Confirm" id="sign-up-player" class="space">
+    </form>
+    <form action="/players" method="get" class="space">
+        <input type="submit" value="Cancel" id="sign-up-player" class="space">
+    </form>
+</div>
+</div>

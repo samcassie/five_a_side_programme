@@ -151,7 +151,7 @@ body, html{
     justify-content: space-between;
 }
 
-input[type=submit] {
+.sign-up {
     background-color: white;
     padding: 12px 26px;
     text-decoration: none;

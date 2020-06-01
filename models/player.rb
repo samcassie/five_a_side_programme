@@ -40,6 +40,23 @@ class Player
         SqlRunner.run( sql, values )
     end
 
+    def update()
+        sql = "UPDATE players
+        SET
+        (
+        first_name,
+        second_name,
+        age,
+        position
+        ) =
+        (
+            $1, $2, $3, $4
+        )
+        WHERE (id, team_id) = ($5, $6)"
+        values = [@first_name, @second_name, @age, @position, @id, @team_id]
+        SqlRunner.run(sql, values)
+    end
+
     def join_team(team_id)
         @team_id = team_id
         sql = "UPDATE players
@@ -83,7 +100,5 @@ class Player
       results = SqlRunner.run( sql )
       return results.map { |player| Player.new( player ) }
     end
-
-
 
 end
