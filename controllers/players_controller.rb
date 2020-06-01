@@ -33,14 +33,15 @@ get '/players/:id/edit' do
     erb(:"players/edit")
 end
 
+post '/players/:id/edit-confirmed' do
+    @player = Player.new(params)
+    @player.update()
+    erb(:"players/edit_confirmed")
+end
+
+
 post '/players' do
     @player = Player.new(params)
     @player.save()
     erb(:"players/created")
-end
-
-post '/players/:id/edit' do
-    @player = Player.new(params)
-    @player.update()
-    erb(:"players/index")
 end
