@@ -50,3 +50,21 @@ post '/teams/:id/add-player' do
     @player.join_team(@team.id)
     erb(:"teams/player_added")
 end
+
+get '/teams/:id/remove-player' do
+    id = params[:id]
+    @team = Team.find(id)
+    @players = @team.players
+    erb(:"teams/remove_player")
+end
+
+post '/teams/:id/remove-player' do
+    team_id = params[:id]
+    @team = Team.find(team_id)
+
+    player_id = params[:player]
+    @player = Player.find(player_id)
+
+    @player.leave_team()
+    erb(:"teams/player_added")
+end

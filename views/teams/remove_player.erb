@@ -1,0 +1,21 @@
+<div id="teams-title">
+    Which player do you wish to remove from <%= @team.name %>?
+
+    <form action="/teams/<%=@team.id%>/remove-player" method="post" class="space">
+        <label for="player">Player: </label>
+            <select id="player" name="player" class="input-box">
+                <% for player in @players %>
+                    <option value="<%=player.id%>"> <%=player.first_name%> <%=player.second_name%> </option>
+                <% end %>
+            </select>
+
+        <input type="submit" value="Remove Player" id="sign-up-team" class="space">
+
+    </form>
+
+    <div id="buttons">
+        <form action="/teams" method="get" class="space">
+            <input type="submit" value="Go Back" id="sign-up-team" class="space">
+        </form>
+    </div>
+</div>

@@ -76,6 +76,25 @@ class Player
        SqlRunner.run(sql, values)
     end
 
+    def leave_team()
+        sql = "UPDATE players
+        SET (
+        first_name,
+        second_name,
+        age,
+        position
+        )
+        =
+        (
+         $1, $2, $3, $4
+        )
+        WHERE id = $5
+        RETURNING team_id"
+        values = [@first_name, @second_name, @age, @position, @id]
+        SqlRunner.run(sql, values)
+        @team_id = nil
+    end
+
     def team()
         sql = "SELECT all FROM teams WHERE teams.id = $1"
         values = [@team_id]
