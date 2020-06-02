@@ -12,5 +12,5 @@ CREATE TABLE players(
     second_name VARCHAR(255),
     age INT,
     position VARCHAR(255),
-    team_id INT REFERENCES teams(id)
+    team_id INT REFERENCES teams(id) DEFAULT NULL
 );

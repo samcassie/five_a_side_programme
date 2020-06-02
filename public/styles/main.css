@@ -66,6 +66,51 @@ body {
     color: white !important;
 }
 
+#rating-board {
+    position: fixed;
+    top: 90vh;
+    right: 0px;
+    width: 50vw;
+    height: 10vh;
+    background-color: rgba(255,255,255,0.8);
+    border-top: 10px inset #42587d;
+    border-left: 10px inset #42587d;
+    border-top-left-radius: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 2vw;
+
+}
+
+.rating {
+    position: absolute;
+    display: flex;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.rating label:before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color: #d1ab00;
+}
+
+.italics {
+    font-style: italic;
+    font-size: 0.9rem;
+}
 
 /* HOME PAGE INDEX STYLING */
 
@@ -174,6 +219,10 @@ body {
 
 .space {
     margin-right: 15px;
+}
+
+#hidden {
+    visibility: hidden;
 }
 
 /* TEAMS PAGES STYLING */

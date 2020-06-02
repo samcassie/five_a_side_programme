@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/player.rb' )
+require_relative( '../models/team.rb' )
 also_reload( '../models/*' )
 
 
@@ -31,6 +32,7 @@ get '/players/:id/edit' do
     id = params[:id]
     @player = Player.find(id)
     erb(:"players/edit")
+
 end
 
 post '/players/:id/edit-confirmed' do

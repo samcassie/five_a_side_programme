@@ -1,3 +1,8 @@
 <div id="players-title">
-You have successfully signed up.
+    Welcome, <%= @player.first_name %>! You are now signed up and can join a team.
+    <div id="buttons">
+        <form action="/players" method="get" class="space">
+            <input type="submit" value="Go Back" id="sign-up-team" class="space">
+        </form>
+    </div>
 </div>

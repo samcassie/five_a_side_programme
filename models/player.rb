@@ -47,13 +47,15 @@ class Player
         first_name,
         second_name,
         age,
-        position
+        position,
+        team_id
         ) =
         (
-            $1, $2, $3, $4
+            $1, $2, $3, $4, $5
         )
-        WHERE (id, team_id) = ($5, $6)"
-        values = [@first_name, @second_name, @age, @position, @id, nil]
+        WHERE id = $6"
+        values = [@first_name, @second_name, @age, @position, @team_id, @id]
+        @team_id = nil
         SqlRunner.run(sql, values)
     end
 
@@ -77,7 +79,7 @@ class Player
     end
 
     def leave_team()
-        @team_id = nil
+        @team_id = team_id
         sql = "UPDATE players
         SET (
         first_name,
