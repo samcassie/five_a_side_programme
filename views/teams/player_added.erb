@@ -1,6 +1,8 @@
 <div id="teams-title">
     <%=@player.first_name%> <%=@player.second_name%> has joined <%=@team.name%>.
+    <div id="buttons">
+        <form action="/teams" method="get" class="space">
+            <input type="submit" value="Go Back" id="sign-up-team" class="space">
+        </form>
+    </div>
 </div>
-<form action="/teams" method="get" class="space">
-    <input type="submit" value="Go Back" id="sign-up-team" class="space">
-</form>

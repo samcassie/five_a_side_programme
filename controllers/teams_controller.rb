@@ -66,5 +66,5 @@ post '/teams/:id/remove-player' do
     @player = Player.find(player_id)
 
     @player.leave_team()
-    erb(:"teams/player_added")
+    erb(:"teams/player_removed")
 end

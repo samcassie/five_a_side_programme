@@ -9,22 +9,32 @@
     <% for team in @teams %>
         <div>
         <h3>Team Name: <%=team.name%></h3>
+        <% team_players = team.players() %>
         <h3>Players: <br><br><br>
             <% for player in team.players%>
                 <%=player.first_name%> <%=player.second_name%> - <%=player.position%>
                 <br><br><br>
             <% end %>
+            <% if team_players.length == 5 %>
+                <h3 id="red">TEAM FULL</h3>
+            <% end %>
         </div></h3>
         <div id="buttons">
-            <form action="/teams/<%=team.id%>/delete" method="get" class="space">
-                <input type="submit" value="Remove Team" id="sign-up-team" class="space">
+            <% if team_players.length == 0 %>
+                <form action="/teams/<%=team.id%>/delete" method="get" class="space">
+                    <input type="submit" value="Remove Team" id="sign-up-team" class="space">
+                </form>
+            <% end %>
+            <% if team_players.length < 5 %>
+                <form action="/teams/<%=team.id%>/add-player" method="get" class="space">
+                    <input type="submit" value="Add Player" id="sign-up-team" class="space">
+            <% end %>
             </form>
-            <form action="/teams/<%=team.id%>/add-player" method="get" class="space">
-                <input type="submit" value="Add Player" id="sign-up-team" class="space">
-            </form>
-            <form action="/teams/<%=team.id%>/remove-player" method="get" class="space">
-                <input type="submit" value="Remove Player" id="sign-up-team" class="space">
-            </form>
+            <% if team_players.length > 0 %>
+                <form action="/teams/<%=team.id%>/remove-player" method="get" class="space">
+                    <input type="submit" value="Remove Player" id="sign-up-team" class="space">
+                </form>
+            <% end %>
         </div>
         <hr>
     <% end %>
