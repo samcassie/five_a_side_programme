@@ -11,6 +11,14 @@ body, html{
     height: 100%;
 }
 
+body {
+    background-image: url('../images/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
 
 /* LAYOUT STYLING */
 
@@ -52,17 +60,6 @@ body, html{
     z-index: 100;
     padding: 0px 10px 0px 10px;
 }
-
-#background-img{
-    background-image: url('../images/background.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    filter: blur(5px);
-}
-
 
 .button:hover{
     background-color: #42587d !important;

@@ -60,6 +60,50 @@ player6 = Player.new({
 
 player6.save()
 
+player7 = Player.new({
+    'first_name' => 'John',
+    'second_name' => 'Jones',
+    'age' => 41,
+    'position' => 'Striker'
+})
+
+player7.save()
+
+player8 = Player.new({
+    'first_name' => 'Michael',
+    'second_name' => 'Johnson',
+    'age' => 21,
+    'position' => 'Goalkeeper'
+})
+
+player8.save()
+
+player9 = Player.new({
+    'first_name' => 'James',
+    'second_name' => 'Brown',
+    'age' => 26,
+    'position' => 'Defender'
+})
+
+player9.save()
+
+player10 = Player.new({
+    'first_name' => 'David',
+    'second_name' => 'Williams',
+    'age' => 24,
+    'position' => 'Midfielder'
+})
+
+player10.save()
+
+player11 = Player.new({
+    'first_name' => 'James',
+    'second_name' => 'Garcia',
+    'age' => 31,
+    'position' => 'Midfielder'
+})
+
+player11.save()
 
 team1 = Team.new({
     'name' => 'Eastside FC'

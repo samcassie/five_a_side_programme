@@ -77,29 +77,29 @@ class Player
     end
 
     def leave_team()
+        @team_id = nil
         sql = "UPDATE players
         SET (
         first_name,
         second_name,
         age,
-        position
-        )
-        =
-        (
-         $1, $2, $3, $4
-        )
-        WHERE id = $5
-        RETURNING team_id"
-        values = [@first_name, @second_name, @age, @position, @id]
-        SqlRunner.run(sql, values)
-        @team_id = nil
+        position,
+        team_id
+       )
+       =
+       (
+         $1, $2, $3, $4, $5
+       )
+       WHERE id = $6"
+       values = [@first_name, @second_name, @age, @position, @team_id, @id]
+       SqlRunner.run(sql, values)
     end
 
     def team()
         sql = "SELECT all FROM teams WHERE teams.id = $1"
         values = [@team_id]
-        team = SqlRunner.run(sql, values).first()
-        return team
+        team = SqlRunner.run(sql, values)
+        return team.first
     end
 
     def self.find( id )

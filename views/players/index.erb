@@ -14,8 +14,9 @@
             <% if player.team == nil %>
             None
             <% else %>
-                <% @player_team = player.team %>
-                <%= @player_team['name'] %>
+                <%# Team method not working so using this for now %>
+                <% players_team = Team.find(player.team_id) %>
+                <%= players_team.name%>
             <% end %>
         </h3>
         <div id="buttons">
