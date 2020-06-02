@@ -77,9 +77,10 @@ class Player
     end
 
     def team()
-        sql = "SELECT * FROM teams WHERE teams.id = $1"
+        sql = "SELECT all FROM teams WHERE teams.id = $1"
         values = [@team_id]
-        result = SqlRunner.run(sql, values).first()
+        team = SqlRunner.run(sql, values).first()
+        return team
     end
 
     def self.find( id )
