@@ -1,0 +1,11 @@
+<div id="teams-title">
+Are you sure you wish you to remove <%= @team.name %>?
+<div id="buttons">
+    <form action="/teams/<%=@team.id%>/delete-confirmed" method="get" class="space">
+        <input type="submit" value="Confirm" id="sign-up-team" class="space">
+    </form>
+    <form action="/teams" method="get" class="space">
+        <input type="submit" value="Cancel" id="sign-up-team" class="space">
+    </form>
+</div>
+</div>

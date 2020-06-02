@@ -9,17 +9,17 @@
     <% for team in @teams %>
         <div>
         <h3>Team Name: <%=team.name%></h3>
-        <h3>Players: <% for player in team.players%>
-        player</h3>
-        <% end %>
-        </div>
-        <br>
-
+        <h3>Players: <br><br><br>
+            <% for player in team.players%>
+                <%=player.first_name%> <%=player.second_name%> - <%=player.position%>
+                <br><br><br>
+            <% end %>
+        </div></h3>
         <div id="buttons">
-            <form action="/teams/:id/delete" method="get" class="space">
+            <form action="/teams/<%=team.id%>/delete" method="get" class="space">
                 <input type="submit" value="Remove" id="sign-up-team" class="space">
             </form>
-            <form action="/teams/:id/add-player" method="get" class="space">
+            <form action="/teams/<%=team.id%>/add-player" method="get" class="space">
                 <input type="submit" value="Add Player" id="sign-up-team" class="space">
             </form>
         </div>

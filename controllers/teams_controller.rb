@@ -21,4 +21,32 @@ post '/teams' do
 end
 
 get '/teams/:id/delete' do
-    @team = 
+    id = params[:id]
+    @team = Team.find(id)
+    erb(:"teams/delete")
+end
+
+get '/teams/:id/delete-confirmed' do
+    id = params[:id]
+    @team = Team.find(id)
+    @team.delete()
+    erb(:"teams/delete_confirmed")
+end
+
+get '/teams/:id/add-player' do
+    id = params[:id]
+    @team = Team.find(id)
+    @players = Player.all()
+    erb(:"teams/add_player")
+end
+
+post '/teams/:id/add-player' do
+    team_id = params[:id]
+    @team = Team.find(team_id)
+
+    player_id = params[:player]
+    @player = Player.find(player_id)
+
+    @player.join_team(@team.id)
+    erb(:"teams/player_added")
+end
