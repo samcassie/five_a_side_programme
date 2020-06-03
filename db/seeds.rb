@@ -123,5 +123,10 @@ team3 = Team.new({
 
 team3.save()
 
+player2.join_team(2)
+player3.join_team(1)
+player7.join_team(2)
+player8.join_team(2)
+
 binding.pry
 nil
